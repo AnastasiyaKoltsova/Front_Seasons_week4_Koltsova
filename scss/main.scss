@@ -24,7 +24,18 @@ body {
     min-height: 20vh;
     background-color: white;
     padding: 5%;
+
     text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.feedback__container {
+    display: flex;
+    gap: 5vw;
+    justify-content: space-between;
 }
 
 .loadPosts-btn {
