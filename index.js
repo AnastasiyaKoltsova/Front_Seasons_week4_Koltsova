@@ -11,17 +11,20 @@ let allPosts = [];
 
 const showPosts = () => {
     postsContainer.innerHTML = '';
-    
+
     const postsToShow = allPosts.slice(0, visiblePosts);
     postsToShow.forEach((post) => {
         const postBlock = createNode('article');
         postBlock.classList.add('post__block');
 
+        const tags = post.tags;
+        const tagsWithSharp = tags.map((tag) => `#${tag}`).join(' ');
+
         postBlock.innerHTML = `
             <h2>${post.title}</h2>
             <p>${post.body}</p>
             <div class="feedback__container">
-                <p>${post.tags}</p>
+                <p>${tagsWithSharp}</p>
                 <p>reactions: ${post.reactions}</p>
             </div>
         `;
